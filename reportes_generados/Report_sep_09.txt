@@ -1,0 +1,37 @@
+*Report generated at UTC HOUR*: 15:17 UTC
+
+*  Urgent Action Required*
+• *Soop - Tipo 2 (id: 207936)* – 2025-09-09: 3 files missing (Tue | 3 | 3 | 3) — no files received, expected 3 — entities: _SHOP, __PAGO, __POS → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• *Soop - Tipo 3 (id: 207938)* – 2025-09-09: 3 files missing (Tue | 3 | 3 | 3) — no files received, expected 3 — entities: SHOP_MARKETPLACE, PAGO, POS_MARKETPLACE → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• *WuPay_Sale payments_2 (id: 228036)* – 2025-09-09: 2 files missing (Tue | 2 | 2 | 2) — no files received, expected 2 — entities: _, anota-ai → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• *WuPay_STL payments_2 (id: 228038)* – 2025-09-09: 2 files missing (Tue | 2 | 2 | 2) — no files received, expected 2 — entities: _, anota-ai → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• *WuPay_Sale_adjustments_3 (id: 239611)* – 2025-09-09: 2 files missing (Tue | 2 | 2 | 2) — no files received, expected 2 — entities: _, anota-ai → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• *WuPay_STL adjustments_3 (id: 239613)* – 2025-09-09: 2 files missing (Tue | 2 | 2 | 2) — no files received, expected 2 — entities: _, anota-ai → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+
+*  Needs Attention*
+• *__Payments_Layout_1_V3 (id: 220504)* – 2025-09-09: Volume increase to 17,001,126 rows (Tue | 19 | 18 | 16; usual Tuesday 8M–10M rows, last week 8,120,850) → *Action:* Confirm coverage/window; monitor next run
+• *__Payments_Layout_2_V3 (id: 220505)* – 2025-09-09: Volume increase to 1,439,469 rows (Tue | 3 | 2 | 2; usual Tuesday 470k–520k rows, last week 499,300) → *Action:* Confirm coverage/window; monitor next run
+• *__Payments_Layout_3_V3 (id: 220506)* – 2025-09-09: Volume increase to 117,278 rows (Tue | 1 | 1 | 1; last week 45,482) → *Action:* Confirm coverage/window; monitor next run
+• * _Settlement_Layout_1 (id: 196125)* – 2025-09-09: Only 41 files received (Tue | 50 | 44 | 50), expected 50 — entities: PwGoogle, MVP, Market, Debito, ApplePay, 3DS, POC, Settlement, Card, Saipos → *Action:* Notify provider to generate/re-send missing files; verify completeness
+
+*  All Good*
+• *_Settlement_Layout_2 (id: 195385)* – 2025-09-09: `[1,074,256] records`
+• *MyPal_DBR RX (id: 195436)* – 2025-09-09: `[0] records`
+• *MyPal_Activity report (id: 195439)* – 2025-09-09: `[362,671] records`
+• *Soop Transaction PIX 3 (id: 199944)* – 2025-09-09: `[88,868] records`
+• *Desco PIX (id: 209773)* – 2025-09-09: `[132,594] records`
+• *Desco Devoluções (id: 211544)* – 2025-09-09: `[5,484] records`
+• *Itm Pagamentos (id: 224602)* – 2025-09-09: `[442,127] records`
+• *Itm Devolução (id: 224603)* – 2025-09-09: `[19,530] records`
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Key Notes on Special Case (195385):**
+- "File Processing Statistics by Day" for Tuesday: Tue | 40 | 38 | 38
+- 39 files received, which is within normal variation (mean 40, min 34, max 76)
+- Upload window: 08:00:00–09:00:00 UTC; all files delivered between 08:08–08:09 UTC (within window)
+- Upload lag mode: -1 (files for Monday delivered Tuesday is normal)
+- No missing files or timing issues; all entities present; volumes consistent with CV
+
+**Summary:**  
+All sources classified strictly per CV rules. All missing files and volume/timing anomalies are reported above. No false positives included.

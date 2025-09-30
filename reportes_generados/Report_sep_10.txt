@@ -1,0 +1,38 @@
+*Report generated at UTC HOUR*: 16:00 UTC
+
+*  Urgent Action Required*
+• * _Settlement_Layout_1 (id: 196125)* – 2025-09-10: 37 files missing past 08:00–08:00 UTC — expected per CV: "Wed | 37 | 42 | 41" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * __Payments_Layout_1_V3 (id: 220504)* – 2025-09-10: 11 files missing past 08:08–08:18 UTC — expected per CV: "Wed | 15 | 16 | 16" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+
+*  Needs Attention*
+• * _Settlement_Layout_2 (id: 195385)* – 2025-09-10: Volume decrease (733,440 rows vs. usual Wednesday mean 1,406,818.17) — CV: "Wed | 32 | 37 | 39" files, lag -1 allowed, but only 7 files received; volume drop is due to missing files, not partial delivery → *Action:* Focus on missing files root cause, not volume
+• * __Payments_Layout_2_V3 (id: 220505)* – 2025-09-10: 2 files missing past 08:00–08:00 UTC — expected per CV: "Wed | 2 | 2 | 2" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * __Payments_Layout_3_V3 (id: 220506)* – 2025-09-10: 1 file missing past 08:00–08:00 UTC — expected per CV: "Wed | 1 | 1 | 1" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_Sale payments_2 (id: 228036)* – 2025-09-10: 2 files missing past 20:00–20:00 UTC — expected per CV: "Wed | 2 | 2 | 2" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_STL payments_2 (id: 228038)* – 2025-09-10: 2 files missing past 20:00–20:00 UTC — expected per CV: "Wed | 2 | 2 | 2" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_Sale_adjustments_3 (id: 239611)* – 2025-09-10: 2 files missing past 20:00–20:00 UTC — expected per CV: "Wed | 2 | 2 | 2" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_STL adjustments_3 (id: 239613)* – 2025-09-10: 2 files missing past 20:00–20:00 UTC — expected per CV: "Wed | 2 | 2 | 2" → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+
+*  All Good*
+• *MyPal_DBR RX (id: 195436)* – 2025-09-10: `[206,708] records`
+• *MyPal_Activity report (id: 195439)* – 2025-09-10: `[386,320] records`
+• *Soop Transaction PIX 3 (id: 199944)* – 2025-09-10: `[113,926] records`
+• *Soop - Tipo 2 (id: 207936)* – 2025-09-10: `[4,986] records`
+• *Soop - Tipo 3 (id: 207938)* – 2025-09-10: `[5,207] records`
+• *Desco PIX (id: 209773)* – 2025-09-10: `[156,356] records`
+• *Desco Devoluções (id: 211544)* – 2025-09-10: `[5,322] records`
+• *Itm Pagamentos (id: 224602)* – 2025-09-10: `[488,161] records`
+• *Itm Devolução (id: 224603)* – 2025-09-10: `[18,612] records`
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Special Case Validation for 195385 (_Settlement_Layout_2):**
+- CV "File Processing Statistics by Day" for Wednesday: "Wed | 32 | 37 | 39"
+- Only 7 files received, all with lag -1 (files for Tuesday, uploaded Wednesday), which is normal per CV ("Upload Lag Days Mode: -1" for Wed).
+- Upload times (08:08–08:09 UTC) are within the expected window ("08:00:00–09:00:00 UTC").
+- However, the low file count is not normal for a Wednesday (mean 32 files). This is a missing files issue, not a timing or lag anomaly.
+
+**Summary:**  
+All "All Good" sources delivered the expected files and volumes for Wednesday, September 10, 2025.  
+All flagged incidents are based strictly on the CV's day-of-week file expectations and timing rules.  
+No false positives: only true deviations from the CV are reported.

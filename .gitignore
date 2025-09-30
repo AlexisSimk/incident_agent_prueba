@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+adk_tutorial.ipynb
+
+# Local data directories (keep private)
+datos/
+datos_ejemplo/
+
+# Generated reports (include in repo)
+# reportes_generados/ - comentado para incluir reportes
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Data files (sensitive)
+datos/
+datos_ejemplo/
+*.csv
+*.json
+*.md
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# ADK specific
+.adk/
+*.adk_cache
+
+# Model outputs
+outputs/
+reports/
+*.report
+
+# API Keys and secrets
+secrets/
+keys/
+credentials/

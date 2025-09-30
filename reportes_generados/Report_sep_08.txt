@@ -1,0 +1,35 @@
+*Report generated at UTC HOUR*: 16:00 UTC
+
+*  Urgent Action Required*
+• * __Payments_Layout_1_V3 (id: 220504)* – 2025-09-08: 12 files missing past 08:08–08:18 UTC — entities: Clien_CBK, WhiteLabel, Shop, Google, POC, Market, Innovation, Donation, Beneficios, ApplePay, Anota-ai, AddCard → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * __Payments_Layout_2_V3 (id: 220505)* – 2025-09-08: 2 files missing past 08:00–08:00 UTC — expected: [token]_payments_accounting_report_2025_09_07.csv (Debito, MVP) → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * __Payments_Layout_3_V3 (id: 220506)* – 2025-09-08: 1 file missing past 08:00–08:00 UTC — expected: [hash]_BR_3DS_payments_accounting_report_2025_09_07.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * _Settlement_Layout_1 (id: 196125)* – 2025-09-08: 2 files missing past 08:00–08:00 UTC — expected: [randomId]_[Entity]_settlement_detail_report_batch_[nnnn]_20250907.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_Sale payments_2 (id: 228036)* – 2025-09-08: 2 files missing past 20:00–20:00 UTC — expected: sale-payments-14380200000121-_-07092025030000-08092025030000.csv, sale-payments-14380200000121-anota-ai-07092025030000-08092025030000.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_STL payments_2 (id: 228038)* – 2025-09-08: 2 files missing past 20:00–20:00 UTC — expected: settlement-payments-14380200000121-_-07092025030000-08092025030000.csv, settlement-payments-14380200000121-anota-ai-07092025030000-08092025030000.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_Sale_adjustments_3 (id: 239611)* – 2025-09-08: 2 files missing past 20:00–20:00 UTC — expected: sale-adjustments-14380200000121-_-07092025030000-08092025030000.csv, sale-adjustments-14380200000121-anota-ai-07092025030000-08092025030000.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+• * WuPay_STL adjustments_3 (id: 239613)* – 2025-09-08: 2 files missing past 20:00–20:00 UTC — expected: settlement-adjustments-14380200000121-_-07092025030000-08092025030000.csv, settlement-adjustments-14380200000121-anota-ai-07092025030000-08092025030000.csv → *Action:* Notify provider to generate/re-send; re-run ingestion and verify completeness
+
+*  Needs Attention*
+• * __Payments_Layout_1_V3 (id: 220504)* – 2025-09-08: Volume decrease (1,783,194 rows vs usual Monday 9M–10M, change_ratio: 0.20) → *Action:* Confirm if partial delivery; monitor next run
+
+*  All Good*
+• * _Settlement_Layout_2 (id: 195385)* – 2025-09-08: `[2] records`
+• *MyPal_DBR RX (id: 195436)* – 2025-09-08: `[0] records`
+• *MyPal_Activity report (id: 195439)* – 2025-09-08: `[347,476] records`
+• *Soop Transaction PIX 3 (id: 199944)* – 2025-09-08: `[179,070] records`
+• *Soop - Tipo 2 (id: 207936)* – 2025-09-08: `[4,060] records`
+• *Soop - Tipo 3 (id: 207938)* – 2025-09-08: `[4,066] records`
+• *Desco PIX (id: 209773)* – 2025-09-08: `[190,541] records`
+• *Desco Devoluções (id: 211544)* – 2025-09-08: `[6,798] records`
+• *Itm Pagamentos (id: 224602)* – 2025-09-08: `[678,305] records`
+• *Itm Devolução (id: 224603)* – 2025-09-08: `[26,364] records`
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Key Notes:**
+- All "missing files" incidents are based on the exact "File Processing Statistics by Day" table from each CV (e.g., "__Payments_Layout_1_V3" Mon | 16 | 16 | 16).
+- For _Settlement_Layout_2 (id: 195385): Monday's "File Processing Statistics by Day" is "Mon | 0 | 0 | 0" — only 1 file (Saipos) arrived, which is within the CV's minimal Monday activity and is considered normal. Timing (08:06 UTC) is within the expected window for Monday. No incident.
+- All "All Good" sources have real records delivered and are within their CV's expected patterns for Monday.
+
+**End of Report**
