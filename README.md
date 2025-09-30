@@ -85,6 +85,9 @@ reportes_generados/          # Reportes del agente (subidos manualmente)
 
 ### Ejecución Básica
 
+link to video
+https://www.loom.com/share/1f9b9ce6ac0d4eeca4473c3fe87b7486?sid=87170586-4b22-4762-bf71-a6931e1c2ff7
+
 ```bash
 python main.py --date 2025-09-08
 ```
@@ -201,6 +204,41 @@ Simplemente actualiza `AGENT_MODEL` en tu `.env`:
 - OpenAI: `gpt-4.1`, `gpt-4.1-mini`, `gpt-4o`
 - Gemini: `gemini-2.5-flash`
 
+## 📊 Evaluación y Rendimiento
+
+### 🎯 Métricas de Accuracy
+El agente ha sido evaluado comparando sus respuestas contra feedback manual de expertos:
+
+```
+📊 EVALUATION RESULTS (3 test dates):
+==================================================
+🗓️ Sept 8:  📈 Accuracy: 66.7%
+🗓️ Sept 9:  📈 Accuracy: 38.9%  
+🗓️ Sept 10: 📈 Accuracy: 72.2%
+
+📋 OVERALL SUMMARY:
+  📈 Average Accuracy: 59.3%
+```
+
+### 📈 Análisis de Resultados
+
+**Fortalezas Identificadas:**
+- ✅ **Detección de Missing Files**: El agente identifica correctamente archivos faltantes críticos
+- ✅ **Cobertura Completa**: Analiza todas las 18 fuentes de datos disponibles
+- ✅ **Formato Consistente**: Genera reportes en el formato ejecutivo requerido
+
+**Áreas de Mejora:**
+- ⚠️ **Clasificación de Severidad**: Tendencia a ser más conservador que el feedback manual
+- ⚠️ **Volume Variations**: Algunas discrepancias en la interpretación de cambios de volumen
+- ⚠️ **Timing Windows**: Refinamiento necesario en la evaluación de ventanas de tiempo
+
+### 🔧 Configuración de Evaluación
+
+La evaluación se ejecuta en `notebooks/v1_analysis.ipynb` comparando:
+- **3 respuestas del agente** vs **3 respuestas de feedback**
+- **18 fuentes de datos** analizadas por fecha
+- **Clasificación por severidad**: URGENT, NEEDS ATTENTION, ALL GOOD
+
 ## 📊 Casos de Uso
 
 ### 1. Monitoreo Diario
@@ -212,11 +250,11 @@ Analizar períodos históricos para identificar patrones de incidencias.
 ### 3. Validación de Cambios
 Verificar el impacto de cambios en sistemas upstream en la calidad de datos.
 
-### 4. Análisis de Reportes
-Los reportes generados con modelo gpt-4.1 se almacenan en `reportes_generados/` para:
-- Documentar resultados del agente
-- Validar consistencia de detecciones
-- Mantener historial de análisis para casos específicos
+### 4. Evaluación Continua
+Los resultados de accuracy se documentan en `notebooks/v1_analysis.ipynb` para:
+- Monitorear mejoras en el rendimiento del agente
+- Identificar patrones en errores de clasificación
+- Validar ajustes en prompts y configuración
 
 ## 🤝 Contribución
 

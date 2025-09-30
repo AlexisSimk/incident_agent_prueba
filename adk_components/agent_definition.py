@@ -207,7 +207,12 @@ def create_report_agent(tools: Optional[List[Callable]] = None) -> Agent:
         # Para OpenAI, usar LiteLlm wrapper con temperatura baja para consistencia
         if not model_name.startswith('openai/'):
             model_name = f"openai/{model_name}"
-        model = LiteLlm(model=model_name, temperature=0.1)
+        model = LiteLlm(
+            model=model_name, 
+            temperature=settings.LLM_TEMPERATURE,
+            seed=settings.LLM_SEED,
+            max_tokens=settings.MAX_TOKENS
+        )
     else:
         # Para Gemini, usar string directo
         model = model_name

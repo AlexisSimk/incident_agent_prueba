@@ -32,9 +32,14 @@ CV_MD_TEMPLATE = "{source_id}_native.md"
 
 
 # --- Configuración del Agente ADK ---
-AGENT_MODEL = os.getenv("AGENT_MODEL", "gemini-2.5-flash")  # Gemini por defecto
+AGENT_MODEL = os.getenv("AGENT_MODEL", "gemini-2.5-pro")  # Gemini por defecto
 APP_NAME = os.getenv("APP_NAME", "incident_detection_agent")
 USER_ID = os.getenv("USER_ID", "ops_team")
+
+# --- Configuración de Consistencia ---
+LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.0"))  # Máxima consistencia
+LLM_SEED = int(os.getenv("LLM_SEED", "42"))  # Seed fijo para reproducibilidad
+MAX_TOKENS = int(os.getenv("MAX_TOKENS", "5000"))  # Límite de tokens
 
 # --- Configuración de APIs ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")

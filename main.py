@@ -48,41 +48,41 @@ async def run_agent(dataset: Dict[str, Dict[str, Any]], execution_date: str) -> 
     runner = Runner(agent=agent, app_name=settings.APP_NAME, session_service=session_service)
 
     prompt = f"""
-OBJETIVO: Generar un reporte preciso basado únicamente en el análisis de los CVs y los datos reales.
+OBJECTIVE: Generate a precise report based solely on CV analysis and real data.
 
-HERRAMIENTAS DISPONIBLES (USAR SOLO ESTAS):
-- list_sources(): panorama general de todas las fuentes
-- get_source_cv_and_data(source_id): CV completo y datos crudos para análisis experto
+AVAILABLE TOOLS (USE ONLY THESE):
+- list_sources(): general overview of all sources
+- get_source_cv_and_data(source_id): complete CV and raw data for expert analysis
 
-INSTRUCCIONES ESPECÍFICAS:
-1. USA SOLO list_sources() y get_source_cv_and_data() - NO uses otras herramientas
-2. Para CADA fuente en list_sources(), usa get_source_cv_and_data() para análisis completo
-3. Lee completamente el CV de cada fuente para entender sus patrones normales
-4. Interpreta inteligentemente si los eventos son normales según el CV o verdaderos incidentes
-5. Determina qué día de la semana es {execution_date} y verifica patrones específicos para ese día en cada CV
+SPECIFIC INSTRUCTIONS:
+1. USE ONLY list_sources() and get_source_cv_and_data() - DO NOT use other tools
+2. For EACH source in list_sources(), use get_source_cv_and_data() for complete analysis
+3. Read each source's CV completely to understand their normal patterns
+4. Intelligently interpret whether events are normal according to the CV or true incidents
+5. Determine what day of the week {execution_date} is and verify specific patterns for that day in each CV
 
-CASO ESPECIAL A VALIDAR:
-- Fuente 195385: ¿Los archivos que llegaron son normales según su CV?
-- ¿El timing 08:06 UTC está dentro de las ventanas esperadas?
-- ¿El lag -1 (archivos del sábado llegando domingo) es normal según el CV?
+SPECIAL CASE TO VALIDATE:
+- Source 195385: Are the files that arrived normal according to its CV?
+- Is the timing 08:06 UTC within expected windows?
+- Is lag -1 (Saturday files arriving Sunday) normal according to the CV?
 
-REGLAS CRÍTICAS PARA ANÁLISIS:
-- Si el CV dice que algo es normal, NO es un incidente
-- Solo reporta verdaderos desvíos de los patrones del CV
-- Usa números reales de records en "All Good"
-- Cada fuente aparece solo una vez en la sección de mayor severidad
-- IGNORA datos de "raw_incidents" si contradicen el análisis del CV
+CRITICAL RULES FOR ANALYSIS:
+- If the CV says something is normal, it is NOT an incident
+- Only report true deviations from CV patterns
+- Use real record numbers in "All Good"
+- Each source appears only once in the highest severity section
+- IGNORE "raw_incidents" data if it contradicts CV analysis
 
-⚠️ REGLA CRÍTICA SOBRE VOLUME VARIATIONS:
-- Si volume decrease es causado por missing files → NO reportar volume variation
-- Solo reportar volume variation si los archivos llegaron pero con menos/más rows
-- Ejemplo: Si 0 files llegaron y 0 rows → Solo missing files (NO volume variation)
-- Ejemplo: Si 2 files llegaron pero con 50% menos rows → Volume variation
+⚠️ CRITICAL RULE ABOUT VOLUME VARIATIONS:
+- IF VOLUME DECREASE IS CAUSED BY MISSING FILES, DO NOT REPORT VOLUMNE VARIATION!
+- Only report volume variation if files arrived but with fewer/more rows
+- Example: If 0 files arrived and 0 rows → Only missing files (NOT volume variation)
+- Example: If 2 files arrived but with 50% fewer rows → Volume variation
 
-CLASIFICACIÓN DE SEVERIDAD:
-🔴 URGENT: Missing files críticos según CV O 3+ incidentes "needs attention"
-🟡 NEEDS ATTENTION: Desvíos de volumen, timing fuera de ventanas del CV
-🟢 ALL GOOD: Todo dentro de patrones normales del CV
+SEVERITY CLASSIFICATION:
+🔴 URGENT: Critical missing files according to CV OR 3+ "needs attention" incidents
+🟡 NEEDS ATTENTION: Volume deviations, timing outside CV windows
+🟢 ALL GOOD: Everything within normal CV patterns
 
 GENERATE THE EXECUTIVE REPORT IN ENGLISH for {execution_date}
 """
