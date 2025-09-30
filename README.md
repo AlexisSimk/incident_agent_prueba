@@ -1,4 +1,6 @@
 # Agent Factory - Incident Detection System
+<img width="2613" height="1518" alt="mermaid-diagram-2025-09-29-224115" src="https://github.com/user-attachments/assets/589d8f3e-b2d0-4087-a1e7-ced580bf437c" />
+
 
 Un sistema de detección de incidencias basado en agentes LLM para monitoreo de fuentes de datos diarias.
 
