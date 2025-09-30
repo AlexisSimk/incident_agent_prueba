@@ -1,4 +1,5 @@
 # Agent Factory - Incident Detection System
+<img width="1024" height="1024" alt="Diagram" src="https://github.com/user-attachments/assets/8fcf7697-10cd-429a-9858-8aceb643b21e" />
 
 Un sistema de detección de incidencias basado en agentes LLM para monitoreo de fuentes de datos diarias.
 
