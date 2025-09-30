@@ -87,6 +87,9 @@ reportes_generados/          # Reportes del agente (subidos manualmente)
 
 ### Ejecución Básica
 
+link to video
+https://www.loom.com/share/1f9b9ce6ac0d4eeca4473c3fe87b7486?sid=87170586-4b22-4762-bf71-a6931e1c2ff7
+
 ```bash
 python main.py --date 2025-09-08
 ```
